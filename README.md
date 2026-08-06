@@ -4,6 +4,10 @@ HousePlay is a complete, mobile-first private game for Dylan and Jamie. It combi
 
 Everything runs locally in the browser. There is no database, account service, build step, CDN, or internet dependency.
 
+## Live app
+
+HousePlay is published at <https://dylanmsprouse3455.github.io/Houseplay/>.
+
 ## Open in Koder
 
 1. Unzip the `HousePlay` folder.
@@ -15,7 +19,7 @@ The Coke-can and water-bottle images are stored in `assets/`, so they remain ava
 
 ## Publish with GitHub Pages
 
-Upload the contents of the `HousePlay` folder to one repository or Pages folder, keeping the same relative paths. Set GitHub Pages to publish from that branch and folder. `index.html` is the only webpage and all links are relative, so no build process is required.
+The included GitHub Actions workflow publishes the repository to GitHub Pages whenever `main` changes. `index.html` is the only webpage and all links are relative, so no build process is required.
 
 ## Project structure
 
