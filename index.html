@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#050506">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="HousePlay — a private points, chores, rewards, Coke, wheel, and lock-timer game for Dylan and Jamie.">
+  <title>HousePlay</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <script src="js/config.js" defer></script>
+  <script src="js/state.js" defer></script>
+  <script src="js/tasks.js" defer></script>
+  <script src="js/cokes.js" defer></script>
+  <script src="js/wheel-lock.js" defer></script>
+  <script src="js/ui.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <div class="app-shell" id="app-shell">
+    <header class="topbar">
+      <div class="topbar-spacer" aria-hidden="true"></div>
+      <a class="brand" href="#home" data-nav="home" aria-label="HousePlay home">
+        <span class="brand-house">House</span><span class="brand-play">Play</span>
+      </a>
+      <button class="icon-button admin-trigger" type="button" data-action="open-admin" aria-label="Open Dylan Admin">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 15.25A3.25 3.25 0 1 0 12 8.75a3.25 3.25 0 0 0 0 6.5Z"></path>
+          <path d="M19.14 12.94c.04-.31.06-.62.06-.94s-.02-.63-.07-.94l2.03-1.59-1.92-3.32-2.5 1.01a7.9 7.9 0 0 0-1.63-.95L14.73 3h-3.84l-.38 3.21c-.58.25-1.12.57-1.63.95l-2.5-1.01-1.92 3.32 2.03 1.59c-.04.31-.06.62-.06.94s.02.63.06.94l-2.03 1.59 1.92 3.32 2.5-1.01c.5.38 1.05.7 1.63.95l.38 3.21h3.84l.38-3.21a7.9 7.9 0 0 0 1.63-.95l2.5 1.01 1.92-3.32-2.02-1.59Z"></path>
+        </svg>
+      </button>
+    </header>
+
+    <main id="app-main" tabindex="-1">
+      <section class="screen is-active" id="screen-home" data-screen="home" aria-labelledby="home-heading">
+        <h1 class="sr-only" id="home-heading">HousePlay Home</h1>
+        <div id="home-content"></div>
+      </section>
+
+      <section class="screen" id="screen-tasks" data-screen="tasks" aria-labelledby="tasks-heading" hidden>
+        <div id="tasks-content"></div>
+      </section>
+
+      <section class="screen" id="screen-wheel" data-screen="wheel" aria-labelledby="wheel-heading" hidden>
+        <div id="wheel-content"></div>
+      </section>
+
+      <section class="screen" id="screen-lock" data-screen="lock" aria-labelledby="lock-heading" hidden>
+        <div id="lock-content"></div>
+      </section>
+
+      <section class="screen" id="screen-history" data-screen="history" aria-labelledby="history-heading" hidden>
+        <div id="history-content"></div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Primary navigation">
+      <button class="nav-item is-active" type="button" data-nav="home" aria-current="page">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V10Z"></path></svg>
+        <span>Home</span>
+      </button>
+      <button class="nav-item" type="button" data-nav="tasks">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11M4 6.01l.01-.011M4 12.01l.01-.011M4 18.01l.01-.011"></path></svg>
+        <span>Tasks</span>
+      </button>
+      <button class="nav-item nav-wheel" type="button" data-nav="wheel">
+        <span class="nav-wheel-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 3.5V12l6.1 6M12 12 5.9 18"></path></svg></span>
+        <span>Wheel</span>
+      </button>
+      <button class="nav-item" type="button" data-nav="lock">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg>
+        <span>Lock</span>
+      </button>
+      <button class="nav-item" type="button" data-nav="history">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"></path><path d="M3 3v5h5M12 7v5l3 2"></path></svg>
+        <span>History</span>
+      </button>
+    </nav>
+  </div>
+
+  <div id="modal-root"></div>
+  <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+  <div class="point-float-layer" id="point-float-layer" aria-hidden="true"></div>
+</body>
+</html>
