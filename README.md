@@ -1,6 +1,6 @@
 # HousePlay
 
-HousePlay is a complete, mobile-first private game for Dylan and Jamie. It combines daily chores, approval-based points, ticket rewards, Coke and water tracking, a pleasure/punishment wheel, persistent lock timing, active effects, admin controls, and a full history ledger.
+HousePlay is a complete, mobile-first private game. It combines daily chores, approval-based points, ticket rewards, Coke and water tracking, a pleasure/punishment wheel, persistent lock timing, active effects, admin controls, and a full history ledger.
 
 Everything runs locally in the browser. There is no database, account service, build step, CDN, or internet dependency.
 
@@ -39,6 +39,7 @@ HousePlay/
 │   ├── cokes.js
 │   ├── wheel-lock.js
 │   ├── ui.js
+│   ├── privacy.js
 │   └── main.js
 └── README.md
 ```
@@ -51,16 +52,16 @@ The standard extra-Coke price is fixed at 2 points. The normal daily allowance i
 
 ## Saved data
 
-The app stores one central state object under the localStorage key `houseplay-v3`. Data is local to the browser and device that opened the app. Export a JSON backup in Dylan Admin before clearing browser data or moving to another device, then import that backup on the new device.
+The app stores one central state object under the localStorage key `houseplay-v3`. Data is local to the browser and device that opened the app. Export a JSON backup in Admin before clearing browser data or moving to another device, then import that backup on the new device.
 
 HousePlay attempts safe migration from older compatible saves, including `houseplay-public-v1`, renamed effects and lock properties, old Coke log shapes, older daily-required records, pending items, and history entries.
 
 ## Admin security
 
-Dylan Admin verifies the entered access code with browser `crypto.subtle` SHA-256. The plain access code is not stored in localStorage. The unlocked session exists only in memory and ends on refresh, tab close, or when **Lock Admin** is pressed.
+Admin access verifies the entered access code with browser `crypto.subtle` SHA-256. The plain access code is not stored in localStorage. The unlocked session exists only in memory and ends on refresh, tab close, or when **Lock Admin** is pressed.
 
 Because this is a client-side static app, the protection prevents ordinary in-app access but is not server-grade authentication. A technically skilled person with control of the browser and source can inspect or alter client-side behavior.
 
 ## Browser support
 
-HousePlay is designed for current iPhone Safari, Android Chrome, desktop browsers, Koder local preview, and GitHub Pages. A secure local preview or HTTPS page is required for browser cryptographic verification in Dylan Admin.
+HousePlay is designed for current iPhone Safari, Android Chrome, desktop browsers, Koder local preview, and GitHub Pages. A secure local preview or HTTPS page is required for browser cryptographic verification in Admin.
