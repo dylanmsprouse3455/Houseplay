@@ -32,8 +32,8 @@
       lockMode: "unlocked"
     },
     {
-      id: "give-dylan-head",
-      label: "Give Dylan head",
+      id: "give-head",
+      label: "Give head",
       detail: "Always locked",
       lockMode: "locked"
     },
@@ -55,7 +55,7 @@
     {
       id: "cold-water-punishment",
       label: "Cold water punishment",
-      detail: "Dylan marks it complete",
+      detail: "Admin marks it complete",
       effectType: "cold-water"
     },
     {
